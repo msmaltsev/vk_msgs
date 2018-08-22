@@ -94,13 +94,15 @@ def tableOfMessages(fname, messages_list):
 
 def main():
     config = loadConfig()
-    peer_id = config['peer_id']
+    peer_ids = config['peer_id']
     user_id = config['user_id']
     access_token = config['access_token']
-    a = loadMessages(peer_id, user_id, access_token)
-
-    result_fname = '%s.txt'%peer_id
-    tableOfMessages(result_fname, a)
+    
+    for peer_id in peer_ids:
+        print('loading dialogue with %s'%peer_id)
+        a = loadMessages(peer_id, user_id, access_token)
+        result_fname = '%s.csv'%peer_id
+        tableOfMessages(result_fname, a)
 
     return None
 
