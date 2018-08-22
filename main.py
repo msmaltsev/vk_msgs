@@ -94,7 +94,7 @@ def tableOfMessages(fname, messages_list):
 
 def main():
     config = loadConfig()
-    peer_ids = config['peer_id']
+    peer_ids = config['peer_ids']
     user_id = config['user_id']
     access_token = config['access_token']
     
